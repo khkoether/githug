@@ -1,0 +1,43 @@
+en:
+  githug:
+    cli:
+      tasks:
+        play: Initialisierung des Spiels
+        test: Test eines Levels aus einem Dateipfad
+        hint: Holen Sie sich einen Hinweis für das aktuelle Level
+        reset: Zurücksetzen des aktuellen Level
+
+      reset:
+        resetting: Level wird zurückgesetzt
+        does_not_exist: Level existiert nicht
+
+      make_directory:
+        change_dir: Bitte wechseln Sie in das Verzeichnis `git_hug`
+        no_dir_found: Kein Githug-Verzeichnis gefunden, möchten Sie eines erstellen?
+        exiting: Verlassen
+
+    game:
+      play_level:
+        welcome: Willkommen bei Githug!
+        success: Glückwunsch, Sie haben das Level gelöst!
+        failure: Tschuldigung, diese Lösung ist nicht ganz richtig!
+        hint_prompt: Nicht vergessen, Sie können `githug hint` für einen Hinweis und `githug reset` zum Zurücksetzen des aktuellen Levels eingeben.
+
+      test_level:
+        valid: Gültige Lösung
+        invalid: Ungültige Lösung
+
+    level:
+      level: "Level:"
+      difficulty: "Schwierigkeitsgrad:"
+      no_hints: Keine Hinweise für dieses Level verfügbar
+
+
+
+
+#  levels:
+#    init:
+#      description: Ein leeres Repository initialisieren
+#       hints:
+#         - "Erster Hinweis"
+#         - "Zweiter Hinweis"
