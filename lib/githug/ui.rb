@@ -32,7 +32,7 @@ module Githug
       end
 
       def ask(msg)
-        request("#{msg} [yn] ") == 'y'
+        request("#{msg} [jn] ") == 'j'
       end
 
       def colorize(text, color_code)

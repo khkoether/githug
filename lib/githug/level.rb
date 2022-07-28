@@ -80,7 +80,8 @@ module Githug
       UI.puts
       UI.puts "Name: #{level_name}"
       UI.puts "Level: #{level_no}"
-      UI.puts "Difficulty: #{"*"*@difficulty}"
+      #en# UI.puts "Difficulty: #{"*"*@difficulty}"
+      UI.puts "Schwierigkeitsgrad: #{"*"*@difficulty}"
       UI.puts
       UI.puts @description
       UI.puts
@@ -106,7 +107,8 @@ module Githug
     end
 
     def show_hint
-      UI.word_box("Githug")
+      #en# UI.word_box("Githug")
+      UI.word_box("Githug-de")
       profile = Profile.load
       current_hint_index = profile.current_hint_index
       if @hints
@@ -121,7 +123,8 @@ module Githug
       elsif @hint
         @hint.call
       else
-        UI.puts("No hints available for this level.")
+        #en# UI.puts("No hints available for this level.")
+        UI.puts("Keine Hinweise verfügbar für dieses Level.")
       end
     end
   end

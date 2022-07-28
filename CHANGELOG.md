@@ -43,6 +43,8 @@ Der \<Scope> kann alles sein, was den Ort der Veränderung angibt.
 
 ### Changed
 - Change the program name: githug -> githug-de
+- German translation of the program output
 
 ## 2022-07-28
 - build: Change the program name
+- feat: German translation of the program output

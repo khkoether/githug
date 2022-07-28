@@ -6,25 +6,30 @@ module Githug
 
     default_task :play
 
-    desc :play, "Initialize the game"
+    #en# desc :play, "Initialize the game"
+    desc :play, "Initialisieren Sie das Spiel"
 
     def play
-      UI.word_box("Githug")
+      #en# UI.word_box("Githug")
+      UI.word_box("Githug-de")
       make_directory!
       Game.new.play_level
     end
 
-    desc :test, "Test a level from a file path"
+    #en# desc :test, "Test a level from a file path"
+    desc :test, "Testen eines Levels von einem Verzeichnis"
     method_option :errors, :type => :boolean, :default => false
 
     def test(path)
-      UI.word_box("Githug")
+      #en# UI.word_box("Githug")
+      UI.word_box("Githug-de")
       make_directory!
       level = Level.load_from_file(path)
       Game.new.test_level(level, options[:errors])
     end
 
-    desc :hint, "Get a hint for the current level"
+    #en# desc :hint, "Get a hint for the current level"
+    desc :hint, "Einen Hinweis für das aktuelle Level erhalten"
 
     def hint
       if level = load_level
@@ -32,29 +37,43 @@ module Githug
       end
     end
 
-    desc :reset, "Reset the current level or select specific level"
+    #en# desc :reset, "Reset the current level or select specific level"
+    desc :reset, "Den aktuellen Level zurücksetzen oder einen bestimmten Level auswählen."
+    #en# long_desc <<-LONGDESC
+    #   `githug reset` will reset the current level. You can optionally specify a
+    #   LEVEL parameter which will reset the game to a specific level. For
+    #   example:
+    #
+    #   > $ githug reset merge_squash   # or $ githug reset 47
+    #
+    #   Will reset githug to level '#47: merge_squash'
+    # LONGDESC
     long_desc <<-LONGDESC
-      `githug reset` will reset the current level. You can optionally specify a
-      LEVEL parameter which will reset the game to a specific level. For
-      example:
+      `githug-de reset` setzt den aktuellen Level zurück.
+      Sie können optional einen LEVEL-Parameter angeben.
+      Zum Beispiel:
 
-      > $ githug reset merge_squash   # or $ githug reset 47
+      > $ githug-de reset merge_squash   # oder auch: $ githug-de reset 47
 
-      Will reset githug to level '#47: merge_squash'
+      Setzt Githug-de auf den Level '#47: merge_squash' zurück.
     LONGDESC
     def reset(path = nil)
       level = load_level(path)
-      UI.word_box("Githug")
+      #en# UI.word_box("Githug")
+      UI.word_box("Githug-de")
       if level
-        UI.puts("resetting level")
+        #en# UI.puts("resetting level")
+        UI.puts("Level zurücksetzen (reset)")
         level.setup_level
         level.full_description
       else
-        UI.error("Level does not exist")
+        #en# UI.error("Level does not exist")
+        UI.error("Level existiert nicht")
       end
     end
 
-    desc :levels, "List all of the levels"
+    #en# desc :levels, "List all of the levels"
+    desc :levels, "Alle Levels auflisten (grün passed/bestanden, rot pending/ausstehend)"
 
     def levels
       list_with_numbers = Level.list.each_with_index.map do |name, index|
@@ -98,14 +117,17 @@ module Githug
 
       def check_githug_directory!
         if File.exists?("./git_hug")
-          UI.puts "Please change into the git_hug directory"
+          #en# UI.puts "Please change into the git_hug directory"
+          UI.puts "Bitte wechseln Sie in das Verzeichnis 'git_hug'."
           exit
         end
       end
 
       def prompt_githug_directory!
-        unless UI.ask("No githug directory found, do you wish to create one?")
-          UI.puts("Exiting")
+        #en# unless UI.ask("No githug directory found, do you wish to create one?")#
+        unless UI.ask("Kein Verzeichnis 'git_hug' gefunden, möchten Sie eines erstellen?")
+          #en# UI.puts("Exiting")
+          UI.puts("Abbruch")
           exit
         end
       end
