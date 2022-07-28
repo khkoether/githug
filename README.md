@@ -1,5 +1,14 @@
-# Githug
-Git Your Game On 
+# Githug-de
+Mach dich auf den Weg
+
+Githug-de ist zuallererst und vor allem eine deutsche Übersetzung von Githug.
+
+Mein Dank geht auch mehr als zehn Jahre danach weiterhin an den Initiator
+(https://github.com/Gazler)[Gazler] &mdash; sowie allen Mitwirkenden.
+
+
+## Githug
+Git Your Game On
 
 [![Build Status](https://travis-ci.org/Gazler/githug.svg?branch=master)](https://travis-ci.org/Gazler/githug) [![Code Climate](https://codeclimate.com/github/Gazler/githug.svg)](https://codeclimate.com/github/Gazler/githug)
 
@@ -31,7 +40,7 @@ To install Githug, run
 If you get a complaint about permissions, you can rerun the command with `sudo`:
 
     sudo gem install githug
-    
+
 #### Usage with Docker
 
 An unofficial _Docker_ image for this project by [@odiraneyya](https://github.com/odiraneyya) is available on ([Docker Hub](https://hub.docker.com/r/orwa84/githug)).
@@ -152,5 +161,3 @@ The easiest way to test a level is:
 Please note that the `githug test` command can be run as `githug test --errors` to get an error stack trace from your solve method.
 
 It would be ideal if you add an integration test for your level.  These tests live in `spec/githug_spec` and **must** be run in order.  If you add a level but do not add a test, please add a simple `skip_level` test case similar to the `contribute` level.
-
-
