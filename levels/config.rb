@@ -1,5 +1,10 @@
 difficulty 1
-description "Set up your git name and email, this is important so that your commits can be identified."
+# description "Set up your git name and email, this is important so that your commits can be identified."
+text = <<~TEXT
+  Richten Sie Ihren Git-Namen und Ihre E-Mail-Adresse ein.
+  Dies ist wichtig, damit Ihre Commits identifiziert werden können.
+TEXT
+description text
 
 setup do
   repo.init
@@ -8,8 +13,10 @@ end
 solution do
   valid = false
 
-  name = request("What is your name?")
-  email = request("What is your email?")
+  # name = request("What is your name?")
+  name = request("Wie lautet Ihr Name?")
+  # email = request("What is your email?")
+  email = request("Wie lautet Ihre E-Mail-Adresse")
   config_name = repo.config["user.name"]
   config_email = repo.config["user.email"]
 
@@ -22,12 +29,15 @@ solution do
     valid = true
   end
 
-  puts "Your config has the following name: #{config_name}"
-  puts "Your config has the following email: #{config_email}"
+  # puts "Your config has the following name: #{config_name}"
+  puts "Ihre Konfiguration hat den folgenden Namen: #{config_name}"
+  # puts "Your config has the following email: #{config_email}"
+  puts "Ihre Konfiguration hat die folgende Email-Adresse: #{config_email}"
 
   valid
 end
 
 hint do
-  puts "These settings are config settings. You should run `git help config` if you are stuck."
+  # puts "These settings are config settings. You should run `git help config` if you are stuck."
+  puts "Diese Einstellungen sind Konfigurationseinstellungen. \nSie sollten `git help config` ausführen, wenn Sie nicht weiterkommen."
 end

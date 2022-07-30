@@ -1,6 +1,11 @@
 difficulty 3
 
-description "We have a file called `oldfile.txt`. We want to rename it to `newfile.txt` and stage this change."
+# description "We have a file called `oldfile.txt`. We want to rename it to `newfile.txt` and stage this change."
+text = <<~TEXT
+  Wir haben eine Datei namens 'oldfile.txt'. Wir wollen sie in 'newfile.txt'
+  umbenennen und diese Änderung für den nächsten Commit vormerken.
+TEXT
+description text
 
 setup do
   repo.init
@@ -14,5 +19,6 @@ solution do
 end
 
 hint do
-  puts "Take a look at `git mv`."
+  # puts "Take a look at `git mv`."
+  puts "Schauen Sie sich `git mv` an."
 end

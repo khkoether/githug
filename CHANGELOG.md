@@ -44,6 +44,14 @@ Der \<Scope> kann alles sein, was den Ort der Veränderung angibt.
 ### Changed
 - Change the program name: githug -> githug-de
 - German translation of the program output
+- German translation of level 00-20  
+  nil, init, config, add, commit, clone,  
+  clone_to_folder, ignore, include, status, number_of_files_committed,  
+  rm, rm_cached, stash, rename, restructure,  
+  log, tag, push_tags, commit_amend, commit_in_future
+
+## 2022-07-30
+- feat: German translation of level 00-20
 
 ## 2022-07-28
 - build: Change the program name

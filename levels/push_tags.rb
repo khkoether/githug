@@ -1,5 +1,10 @@
 difficulty 2
-description "There are tags in the repository that aren't pushed into remote repository. Push them now."
+# description "There are tags in the repository that aren't pushed into remote repository. Push them now."
+text = <<~TEXT
+  Es gibt Tags im Repository, die nicht in das Remote-Repository
+  übertragen wurden. Pushen Sie sie jetzt.
+TEXT
+description text
 
 setup do
   # remember the working directory so we can come back to it later
@@ -45,10 +50,12 @@ solution do
   solved = false
 
   # a bit hacky solution to get tags from remote
-  remote_tags=
-    repo.git.raw_git_call("git ls-remote --tags .", repo.git.git_file_index).
-      first.
-      split("\n")
+  # remote_tags =
+  #   repo.git.raw_git_call("git ls-remote --tags .", repo.git.git_file_index).
+  #     first.
+  #     split("\n")
+  remote_tags = `git ls-remote --tags .`
+  remote_tags = remote_tags.split("\n")
 
   # see if we have the correct tag in the remote
   remote_tags.each do |t|
@@ -59,5 +66,6 @@ solution do
 end
 
 hint do
-  puts "Take a look at `--tags` flag of `git push`"
+  # puts "Take a look at `--tags` flag of `git push`"
+  puts "Werfen Sie einen Blick auf das '--tags'-Flag von `git push`"
 end

@@ -1,5 +1,10 @@
 difficulty 1
-description "There are some files in this repository, how many of the files are staged for a commit?"
+# description "There are some files in this repository, how many of the files are staged for a commit?"
+text = <<~TEXT
+  Es gibt einige Dateien in diesem Repository. Wie viele der
+  Dateien sind aktuell für den nächsten Commit bereitgestellt?
+TEXT
+description text
 
 setup do
   repo.init
@@ -31,7 +36,8 @@ setup do
 end
 
 solution do
-  numberOfFilesThereWillBeCommit = request("How many files are going to be committed?")
+  # numberOfFilesThereWillBeCommit = request("How many files are going to be committed?")
+  numberOfFilesThereWillBeCommit = request("Wie viele Dateien sind für den nächsten Commit vorgesehen?")
 
   isInteger = !!(numberOfFilesThereWillBeCommit =~ /^[-+]?[0-9]+$/)
 
@@ -47,5 +53,6 @@ solution do
 end
 
 hint do
-  puts "You are looking for a command to identify the status of the repository, (resembles a linux command)."
+  # puts "You are looking for a command to identify the status of the repository, (resembles a linux command)."
+  puts "Sie suchen nach einem Befehl, der den Status des Repositorys ermittelt."
 end

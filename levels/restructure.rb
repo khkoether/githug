@@ -1,6 +1,13 @@
 difficulty 3
 
-description "You added some files to your repository, but now realize that your project needs to be restructured. Make a new folder named `src` and use Git move all of the .html files into this folder."
+# description "You added some files to your repository, but now realize that your project needs to be restructured. Make a new folder named `src` and use Git move all of the .html files into this folder."
+text = <<~TEXT
+  Sie haben einige Dateien zu Ihrem Repository hinzugefügt, stellen aber
+  nun fest, dass Ihr Projekt umstrukturiert werden muss. Legen Sie einen
+  neuen Ordner mit dem Namen 'src' an und verschieben Sie mit Git alle
+  .html-Dateien in diesen Ordner.
+TEXT
+description text
 
 setup do
   repo.init
@@ -36,5 +43,6 @@ solution do
 end
 
 hint do
-  puts "You'll have to use mkdir, and `git mv`."
+  # puts "You'll have to use mkdir, and `git mv`."
+  puts "Sie müssen `mkdir` und `git mv` verwenden."
 end
