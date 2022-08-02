@@ -49,6 +49,12 @@ Der \<Scope> kann alles sein, was den Ort der Veränderung angibt.
   clone_to_folder, ignore, include, status, number_of_files_committed,  
   rm, rm_cached, stash, rename, restructure,  
   log, tag, push_tags, commit_amend, commit_in_future
+- German translation of level 21-30  
+  reset, reset_soft, checkout_file, remote, remote_url  
+  pull, remote_add, push, diff, blame
+
+## 2022-08-02
+- feat: German translation of level 21-30
 
 ## 2022-07-30
 - feat: German translation of level 00-20
