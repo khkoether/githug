@@ -1,8 +1,14 @@
 difficulty 2
 description "You've made some changes to a local branch and want to share it, but aren't yet ready to merge it with the 'master' branch. Push only 'test_branch' to the remote repository"
+text = <<~TEXT
+  Sie haben einige Änderungen an einem lokalen Branch vorgenommen und
+  möchten ihn freigeben, sind aber noch nicht bereit, ihn mit dem
+  'master'-Branch zusammenzuführen.
+  Nur 'test_branch' in das entfernte Repository übertragen.
+TEXT
+description text
 
 setup do
-
   # remember the working directory so we can come back to it later
   cwd = Dir.pwd
   # initialize another git repo to be used as a "remote"
@@ -10,10 +16,15 @@ setup do
 
   # local repo
   repo.init
+  branch_name = repo.head.name
+  if branch_name != "master"
+    system("git branch -m #{branch_name} master")
+  end
 
   FileUtils.touch "file1"
   repo.add        "file1"
-  repo.commit_all "committed changes on master"
+  # repo.commit_all "committed changes on master"
+  repo.commit_all "Änderungen in 'master'"
 
   # copy the repo to remote
   FileUtils.cp_r ".", tmpdir
@@ -21,21 +32,24 @@ setup do
   # add another file. If successful this file won't be pushed to the remote repository
   FileUtils.touch "file2"
   repo.add        "file2"
-  repo.commit_all "If this commit gets pushed to repo, then you have lost the level :( "
+  # repo.commit_all "If this commit gets pushed to repo, then you have lost the level :( "
+  repo.commit_all "Wenn dieser Commit in das Repo gepusht wird, dann haben Sie den Level verloren :( "
 
   # This branch should not be pushed to to the remote repository
   `git checkout -b other_branch --quiet`
   # add another file
   FileUtils.touch "file3"
   repo.add        "file3"
-  repo.commit_all "If this commit gets pushed to repo, then you have lost the level :( "
+  # repo.commit_all "If this commit gets pushed to repo, then you have lost the level :( "
+  repo.commit_all "Wenn dieser Commit in das Repo gepusht wird, dann haben Sie den Level verloren :( "
 
   `git checkout -b test_branch --quiet`
 
   # This file should get pushed if the level is successful
   FileUtils.touch "file4"
   repo.add        "file4"
-  repo.commit_all "committed change on test_branch"
+  # repo.commit_all "committed change on test_branch"
+  repo.commit_all "Änderungen im 'test_branch'"
 
   # remote repo
   Dir.chdir tmpdir
@@ -72,16 +86,19 @@ solution do
 
   # User pushed up too many branches, level failed
   elsif num_remote_branches > 2
-    puts "*** It looks like you pushed up too many branches. You need to make sure only 'test_branch' gets pushed. Please try again! ***"
+    # puts "*** It looks like you pushed up too many branches. You need to make sure only 'test_branch' gets pushed. Please try again! ***"
+    puts "*** Es sieht so aus, als hätten Sie zu viele Branche hochgeladen. \nSie müssen sicherstellen, dass nur 'test_branch' hochgeladen wird. \nBitte versuchen Sie es erneut! ***"
 
   # User pushed up the master branch, level failed
   elsif remote_master_commits > 1
-    puts "*** It looks like you pushed up new master branch changes. You need to make sure only 'test_branch' gets pushed. Please try again! ***"
+    # puts "*** It looks like you pushed up new master branch changes. You need to make sure only 'test_branch' gets pushed. Please try again! ***"
+    puts "*** Es sieht so aus, als hätten Sie neue Änderungen im 'master'-Branch \nhochgeladen. Sie müssen sicherstellen, dass nur 'test_branch' hochgeladen wird. \nBitte versuchen Sie es erneut! ***"
   end
 
   result
 end
 
 hint do
-  puts "Investigate the options in `git push` using `git push --help`"
+  # puts "Investigate the options in `git push` using `git push --help`"
+  puts "Untersuchen Sie die Optionen in `git push` mit `git push --help`."
 end

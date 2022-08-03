@@ -50,8 +50,14 @@ Der \<Scope> kann alles sein, was den Ort der Veränderung angibt.
   rm, rm_cached, stash, rename, restructure,  
   log, tag, push_tags, commit_amend, commit_in_future
 - German translation of level 21-30  
-  reset, reset_soft, checkout_file, remote, remote_url  
+  reset, reset_soft, checkout_file, remote, remote_url,  
   pull, remote_add, push, diff, blame
+- German translation of level 31-40  
+  branch, checkout, checkout_tag, checkout_tag_over_branch, branch_at,  
+  delete_branch, push_branch, merge, fetch, rebase
+
+## 2022-08-03
+- feat: German translation of level 31-40
 
 ## 2022-08-02
 - feat: German translation of level 21-30

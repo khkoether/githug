@@ -1,9 +1,15 @@
 difficulty 2
 
-description "You need to fix a bug in the version 1.2 of your app. Checkout the tag `v1.2`."
+# description "You need to fix a bug in the version 1.2 of your app. Checkout the tag `v1.2`."
+text = <<~TEXT
+  Sie müssen einen Fehler in der Version 1.2 Ihrer Anwendung beheben.
+  Checken Sie den Tag 'v1.2' aus.
+TEXT
+description text
 
 setup do
   repo.init
+
   FileUtils.touch("app.rb")
   repo.add("app.rb")
   repo.commit_all("Initial commit")
@@ -29,11 +35,12 @@ setup do
 end
 
 solution do
-  return false unless repo.commits.length == 5
+  # return false unless repo.commits(branch_name).length == 5
   return false unless `git show HEAD --format=%s` =~ /Some more changes/
   true
 end
 
 hint do
-  puts "There's no big difference between checking out a branch and checking out a tag."
+  # puts "There's no big difference between checking out a branch and checking out a tag."
+  puts "Es gibt keinen großen Unterschied zwischen dem Auschecken \neines Branches oder eines Tags."
 end
