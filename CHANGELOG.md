@@ -61,10 +61,12 @@ Der \<Scope> kann alles sein, was den Ort der Veränderung angibt.
 - German translation of level 51-56  
   find_old_branch, revert, restore, conflict, submodule,  
   contribute
+- Level-description: The word Kommando is replaced by Befehl
 
 ## 2022-08-04
 - feat: German translation of level 41-50
 - feat: German translation of level 51-56
+- feat: The word Kommando is replaced by Befehl
 
 ## 2022-08-03
 - feat: German translation of level 31-40

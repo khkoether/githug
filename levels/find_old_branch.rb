@@ -18,5 +18,5 @@ end
 
 hint do
   # puts "Ever played with the `git reflog` command?"
-  puts "Vor Jahren wäre `git reflog` der richtige Ansatz gewesen. \nSpäter hat das Kommando `git checkout` eine weitere Option erhalten. \nUnd seit Git v2.23 gibt es auch `git switch` mit entsprechender Option."
+  puts "Vor Jahren wäre `git reflog` der richtige Ansatz gewesen. \nSpäter hat der Befehl `git checkout` eine weitere Option erhalten. \nUnd seit Git v2.23 gibt es auch `git switch` mit entsprechender Option."
 end

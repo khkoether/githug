@@ -21,5 +21,5 @@ end
 
 hint do
   # puts "Check out the remote repositories and research `git pull`."
-  puts "Prüfen Sie die Remote Repositorys und das Kommando `git pull`."
+  puts "Prüfen Sie die Remote Repositorys und den Befehl `git pull`."
 end

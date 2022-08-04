@@ -26,5 +26,5 @@ end
 
 hint do
   # puts "What are some options you can use with `git reset`?"
-  puts "Welche Kommando-Optionen können Sie mit `git reset` verwenden?"
+  puts "Welche Optionen können Sie mit `git reset` verwenden?"
 end

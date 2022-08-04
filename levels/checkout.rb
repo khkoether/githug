@@ -6,7 +6,7 @@ text = <<~TEXT
   Level getan haben.
 
   Hinweis:
-  Zum wechseln eines Branches gibt es zwei Kommandos:
+  Zum wechseln eines Branches gibt es zwei Befehle:
   `git checkout` und `git switch`
 TEXT
 description text

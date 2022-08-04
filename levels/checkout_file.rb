@@ -6,7 +6,8 @@ text = <<~TEXT
   Stellen Sie die Version der Datei aus dem letzten Commit wieder her.
 
   Hinweis:
-  Für die Lösung gibt es zwei Kommandos: `git checkout` und `git restore`  
+  Für die das Wiederherstellen der Datei gibt es zwei Befehle:
+  `git checkout` und `git restore`
 TEXT
 description text
 

@@ -1,13 +1,14 @@
 difficulty 2
 # description "There are two files to be committed. The goal was to add each file as a separate commit, however both were added by accident. Unstage the file `to_commit_second.rb` using the reset command (don't commit anything)."
 text = <<~TEXT
-Es gibt zwei Dateien, die mit je einem Commit gespeichert werden sollen.
-Versehentlich wurden beide Dateien in den Staging-Bereich hinzugefügt.
-Nehmen Sie die Datei 'to_commit_second.rb' wieder heraus.
-Führen Sie keinen Commit durch.
+  Es gibt zwei Dateien, die mit je einem Commit gespeichert werden sollen.
+  Versehentlich wurden beide Dateien in den Staging-Bereich hinzugefügt.
+  Nehmen Sie die Datei 'to_commit_second.rb' wieder heraus.
+  Führen Sie keinen Commit durch.
 
-Hinweis:
-Für die Lösung gibt es zwei Kommandos: `git reset` und `git restore`
+  Hinweis:
+  Für das Entfernen aus dem Staging-Bereich gibt es zwei Befehle:
+  `git reset` und `git restore`
 TEXT
 description text
 
