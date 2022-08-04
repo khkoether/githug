@@ -55,6 +55,12 @@ Der \<Scope> kann alles sein, was den Ort der Veränderung angibt.
 - German translation of level 31-40  
   branch, checkout, checkout_tag, checkout_tag_over_branch, branch_at,  
   delete_branch, push_branch, merge, fetch, rebase
+- German translation of level 41-50  
+  rebase_onto, repack, cherry-pick, grep, rename_commit,  
+  squash, merge_squash, reorder, bisect, stage_lines
+
+## 2022-08-04
+- feat: German translation of level 41-50
 
 ## 2022-08-03
 - feat: German translation of level 31-40

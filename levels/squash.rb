@@ -1,5 +1,10 @@
 difficulty 4
-description "You have committed several times but would like all those changes to be one commit."
+# description "You have committed several times but would like all those changes to be one commit."
+text = <<~TEXT
+  Sie haben mehrere Commits vorgenommen, möchten aber, dass all diese
+  Änderungen in einem einzigen Commit zusammengefasst werden.
+TEXT
+description text
 
 setup do
   repo.init
@@ -21,9 +26,10 @@ setup do
 end
 
 solution do
-  repo.commits.length == 2
+  repo.commits(repo.head.name).length == 2
 end
 
 hint do
-  puts "Take a look at the `-i` flag of the rebase command."
+  # puts "Take a look at the `-i` flag of the rebase command."
+  puts "Schauen Sie sich die Option '-i' des Befehls 'git rebase' an."
 end

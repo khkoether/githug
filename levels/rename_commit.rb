@@ -1,5 +1,10 @@
 difficulty 3
-description "Correct the typo in the message of your first (non-root) commit."
+# description "Correct the typo in the message of your first (non-root) commit."
+text = <<~TEXT
+  Korrigieren Sie den Tippfehler in der Commit-Message
+  im ersten (non-root) Commit.
+TEXT
+description text
 
 setup do
   repo.init
@@ -17,9 +22,10 @@ setup do
 end
 
 solution do
-  repo.commits.first.parents[0].message == "First commit"
+  repo.commits(repo.head.name).first.parents[0].message == "First commit"
 end
 
 hint do
-  puts "Take a look the `-i` flag of the rebase command."
+  # puts "Take a look the `-i` flag of the rebase command."
+  puts "Schauen Sie sich die Option '-i' des Befehls 'git rebase' an."
 end

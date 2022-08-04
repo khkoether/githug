@@ -1,5 +1,11 @@
 difficulty 3
-description "Your new feature isn't worth the time and you're going to delete it. But it has one commit that fills in `README` file, and you want this commit to be on the master as well."
+# description "Your new feature isn't worth the time and you're going to delete it. But it has one commit that fills in `README` file, and you want this commit to be on the master as well."
+text = <<~TEXT
+  Der Branch 'new_feature' ist die Zeit nicht wert und Sie werden ihn löschen.
+  Aber es gibt einen Commit, der die Datei 'README' füllt, und Sie wollen,
+  dass dieser Commit auch auf dem 'master'-Branch ist.
+TEXT
+description text
 
 setup do
     init_from_level
@@ -13,5 +19,6 @@ solution do
 end
 
 hint do
-  puts "Sneak a peek at the `git help cherry-pick` command."
+  # puts "Sneak a peek at the `git help cherry-pick` command."
+  puts "Werfen Sie einen Blick auf den Befehl `git help cherry-pick`."
 end

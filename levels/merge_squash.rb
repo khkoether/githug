@@ -1,8 +1,14 @@
 difficulty 3
-description "Merge all commits from the long-feature-branch as a single commit."
+# description "Merge all commits from the long-feature-branch as a single commit."
+text = <<~TEXT
+  Mergen Sie alle Commits aus dem Branch 'long-feature-branch' als einen
+  einzigen Commit in Ihren Hauptentwicklungs-Branch.
+TEXT
+description text
 
 setup do
   repo.init
+  branch_name = repo.head.name
 
   FileUtils.touch "file1"
   repo.add        "file1"
@@ -21,7 +27,8 @@ setup do
   repo.add        "file3"
   repo.commit_all "Time"
 
-  repo.git.native :checkout, {}, 'master'
+  # repo.git.native :checkout, {}, 'master'
+  repo.git.native :checkout, {}, branch_name
 
   FileUtils.touch "file2"
   repo.add        "file2"
@@ -32,7 +39,7 @@ solution do
   result = true
 
   # Check the number of commits in the repo (should be 4 - including initial .gitignore).
-  result = false unless repo.commits.size == 3
+  result = false unless repo.commits(repo.head.name).size == 3
 
   # Check if changes from all the commits from long-feature-branch are included.
   file = File.open('file3')
@@ -45,5 +52,6 @@ solution do
 end
 
 hint do
-  puts "Take a look at the `--squash` option of the merge command. Don't forget to commit the merge!"
+  # puts "Take a look at the `--squash` option of the merge command. Don't forget to commit the merge!"
+  puts "Schauen Sie sich die Option '--squash' des Merge-Befehls an. \nVergessen Sie nicht, die Zusammenführung zu bestätigen!"
 end

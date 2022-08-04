@@ -1,8 +1,19 @@
 difficulty 2
 
-description "You have created your branch from `wrong_branch` and already made some commits, \
-and you realise that you needed to create your branch from `master`. \
-Rebase your commits onto `master` branch so that you don't have `wrong_branch` commits."
+# description "You have created your branch from `wrong_branch` and already made some commits, \
+# and you realise that you needed to create your branch from `master`. \
+# Rebase your commits onto `master` branch so that you don't have `wrong_branch` commits."
+text = <<~TEXT
+  Sie haben Ihren Branch von 'wrong_branch' erstellt und bereits
+  einige Commits vorgenommen, und Sie stellen fest, dass Sie Ihren
+  Branch von 'master' aus erstellen mussten.
+  Stellen Sie Ihre Commits auf den 'master'-Branch um, damit Sie
+  keine 'wrong_branch'-Commits haben.
+
+  Hinweis:
+  Rebase ist das wiederholte Anwenden von Commits auf anderem Basis-Commit.
+TEXT
+description text
 
 setup do
   readme_file  = "README.md"
@@ -41,5 +52,6 @@ solution do
 end
 
 hint do
-  puts "You want to research the `git rebase` commands `--onto` argument"
+  # puts "You want to research the `git rebase` commands `--onto` argument"
+  puts "Sie sollten den Befehl `git rebase` mit dem Argument '--onto' untersuchen."
 end

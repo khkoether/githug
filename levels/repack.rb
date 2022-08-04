@@ -1,5 +1,10 @@
 difficulty 2
-description "Optimise how your repository is packaged ensuring that redundant packs are removed."
+# description "Optimise how your repository is packaged ensuring that redundant packs are removed."
+text = <<~TEXT
+  Optimieren Sie die Paketierung Ihres Repositorys und stellen Sie
+  sicher, dass überflüssige Pakete entfernt werden.
+TEXT
+description text
 
 setup do
   repo.init
@@ -15,5 +20,6 @@ solution do
 end
 
 hint do
-  puts "You want to research the `git repack` command."
+  # puts "You want to research the `git repack` command."
+  puts "Schauen Sie sich `git help repack` an."
 end

@@ -1,5 +1,10 @@
 difficulty 4
 description "You have committed several times but in the wrong order. Please reorder your commits."
+text = <<~TEXT
+  Sie haben mehrere Commits vorgenommen, aber in der falschen Reihenfolge.
+  Bitte ordnen Sie Ihre Commits neu an.
+TEXT
+description text
 
 setup do
   repo.init
@@ -26,5 +31,6 @@ solution do
 end
 
 hint do
-  puts "Take a look the `-i` flag of the rebase command."
+  # puts "Take a look the `-i` flag of the rebase command."
+  puts "Schauen Sie sich die Option '-i' des Befehls 'git rebase' an."
 end
